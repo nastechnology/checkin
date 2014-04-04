@@ -2,7 +2,7 @@
 
 A small checkin app for mobile devices (laptops). We use this with [puppet](http://puppetlabs.com)
 in one of our custom modules we wrote.  We have set puppet to run every 30 minutes
-and by using the $::ipaddress fact if it is not part of our network it check's into our servers.
+and by using the $::ipaddress fact if it is not part of our network it checks into our servers.
 
 This project can obviously be expanded on quite a bit but this is where we started.
 
