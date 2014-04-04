@@ -13,7 +13,7 @@ function getIp($computer = 1) {
         header('Content-Type: application/json');
         echo json_encode($ip);
     } else {
-        $sql = "INSERT INTO findme (ip,computer,check_in) VALUES (:ip,:computer,:check_in)"; 
+        $sql = "INSERT INTO findme (ip,computer,check_in) VALUES (:ip,:computer,:check_in)";
         $db = getConnection();
         $count = checkDuplicate($computer, $ip);
         if($count == 0){
@@ -43,9 +43,9 @@ function checkDuplicate($computer,$ip) {
 }
 
 function getConnection() {
-    $dbhost="10.20.15.56";
-    $dbuser="apiuser";
-    $dbpass="new*data";
+    $dbhost="localhost";
+    $dbuser="user";
+    $dbpass="password";
     $dbname="checkin";
     $dbh = new PDO("mysql:host=$dbhost;dbname=$dbname", $dbuser, $dbpass);
     $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
