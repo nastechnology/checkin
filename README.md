@@ -31,7 +31,7 @@ $ php composer.phar install
 # While logged in to mysql via root user, create database and user with privileges
 $ CREATE DATABASE checkin;
 $ CREATE USER '[user_name]'@'localhost' IDENTIFIED BY '[user_password]';
-$ GRANT ALL PRIVILEGES ON checkin.* to [user_name]@'%';
+$ GRANT ALL PRIVILEGES ON checkin.* to [user_name]@'localhost';
 
 # Dump mysql files
 $ mysql -u root -p[rootpassword] checkin < checkin.sql
