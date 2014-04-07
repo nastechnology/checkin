@@ -27,7 +27,13 @@ Clients
 $ git clone https://github.com/nastechnology/checkin.git
 $ cd checkin
 $ php composer.phar install
-$ mysqladmin create checkin
+
+# While logged in to mysql via root user, create database and user with privileges
+$ CREATE DATABASE checkin;
+$ CREATE USER '[user_name]'@'localhost' IDENTIFIED BY '[user_password]';
+$ GRANT ALL PRIVILEGES ON checkin.* to [user_name]@'%';
+
+# Dump mysql files
 $ mysql -u root -p[rootpassword] checkin < checkin.sql
 ```
 
