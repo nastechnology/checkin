@@ -63,4 +63,4 @@ to get the ``ipcheck`` to run as a service.  If you don't want to restart run th
 launchctl load -w /Library/LaunchDaemons/org.company.checkin.ipcheck.plist
 ```
 
-# *** Using this we were able to recover a stolen district laptop - 04/04/2014***
+#### *** Using this we were able to recover a stolen district laptop - 04/04/2014***
