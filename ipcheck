@@ -1,0 +1,30 @@
+#!/bin/bash
+
+IPTEST=`ipconfig getifaddr en0`
+
+if [ -z "$IPTEST" ]; then
+
+  IP=`ipconfig getifaddr en1`
+else
+
+  IP="$IPTEST"
+
+fi
+
+if [ ! -f /opt/checkin/address.txt ]; then
+
+  touch /opt/checkin/address.txt
+
+  echo $IP > /opt/checkin/address.txt
+
+fi
+
+FILEIP=$(cat /opt/checkin/address.txt)
+
+if [ $IP != $FILEIP ]; then
+  /opt/checkin/checkin.sh
+
+  sed -i '' "s/${FILEIP}/${IP}/" /opt/checkin/address.txt
+
+fi
+

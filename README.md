@@ -46,4 +46,21 @@ $dbpass="password";
 $dbname="checkin";
 ```
 
-###*** Using this we were able to recover a stolen district laptop - 04/04/2014***
+### IPCheck and OSX Service
+
+Create the following directory
+
+```
+/opt/checkin
+```
+
+and put the ``ipcheck`` and the ``.sh`` file in that directory.
+
+Put the ``org.company.checkin.ipcheck.plst`` in the ``/Library/LaunchDaemons`` directory.  Restart your machine
+to get the ``ipcheck`` to run as a service.  If you don't want to restart run the following in your terminal.
+
+```
+launchctl load -w /Library/LaunchDaemons/org.company.checkin.ipcheck.plist
+```
+
+#### *** Using this we were able to recover a stolen district laptop - 04/04/2014***
